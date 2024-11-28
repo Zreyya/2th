@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Happy Anniversary Sayaang!</strong>
+                        <p>
+                            Hari ini hari yang special dimana 2 tahun lalu kita saling mengisi hati. I wish I could repeat this special date with you!<br>
+                            Thank you for understanding and accepting me as I am. I love you
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Polaroid kiri -->
+            <div class="polaroid polaroid-left">
+                <video width="150" height="200" autoplay loop muted>
+                    <source src="VID-20231014-WA0033.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+        <!-- Polaroid kanan -->
+        <div class="polaroid polaroid-right">
+            <video autoplay loop muted>
+                <source src="WhatsApp Video 2024-11-28 at 23.05.22.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+            <div class="heart"></div>
+            <img src="appu.png" alt="background">
+        </div>
+        <div class="hearta"></div>
+    </div>
+    <div class="hearts"></div> <!-- Animasi hati -->
+
+     <!-- Audio tanpa kontrol -->
+     <audio autoplay loop>
+        <source src="Yung Kai - Blue (Lyrics).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+
+        // JavaScript untuk hati
+        const heartsContainer = document.querySelector('.hearts');
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+</body>
+
+
+</html>
